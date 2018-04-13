@@ -1,0 +1,180 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-icon" data-background-color="rose">
+                        <i class="material-icons">perm_identity</i>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Edit Profile -
+                            <small class="category">Complete your profile</small>
+                        </h4>
+                        <form (ngSubmit)="profile(f);" #f="ngForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">First Name</label>
+                                        <input type="text" class="form-control" id="fname" 
+                                        name="fname" [(ngModel)]="property.fname" #fname="ngModel">
+                                        <!-- <small [hidden]="fname.valid || (fname.pristine && !f.submitted)" class="text-danger">
+                                                First Name is required
+                                        </small> -->
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Last Name</label>
+                                        <input type="text" class="form-control" id="lname"
+                                        name="lname" [(ngModel)]="property.lname">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Address</label>
+                                        <input type="text" class="form-control" id="address"
+                                        name="address" [(ngModel)]="property.address">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">City</label>
+                                        <input type="text" class="form-control" id="city"
+                                        name="city" [(ngModel)]="property.city">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">State</label>
+                                        <input type="text" class="form-control" id="state"
+                                        name="state" [(ngModel)]="property.state">
+                                    </div>
+                                </div>                                
+                                <div class="col-md-4">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Country</label>
+                                        <input type="text" class="form-control" id="country"
+                                        name="country" [(ngModel)]="property.country">
+                                    </div>
+                                </div>                                
+                                <div class="col-md-4">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Postal Code</label>
+                                        <input type="text" class="form-control" id="zip"
+                                        name="zip" [(ngModel)]="property.zip" #zip="ngModel">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Mobile Number</label>
+                                        <input type="text" class="form-control" id="mobile"
+                                        name="mobile" minlength="10" maxlength="10" 
+                                        [(ngModel)]="property.mobile"
+                                        #mobile="ngModel" readonly>
+                                        <small [hidden]="mobile.valid || (mobile.pristine && !f.submitted)" class="text-danger">
+                                                Mobile number is invalid
+                                        </small>
+                                    </div>
+                                </div>    
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Email address</label>
+                                            <input type="email" class="form-control" id="email"
+                                            name="email" [(ngModel)]="property.email" #email="ngModel"
+                                            pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$" readonly>
+                                            <small [hidden]="email.valid || (email.pristine && !f.submitted)" class="text-danger">
+                                                    Email id is invalid
+                                            </small>
+                                        </div>
+                                    </div>
+                                </div>                                                            
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>About Me</label>
+                                        <div class="form-group label-floating">
+                                            <label class="control-label"></label>
+                                            <textarea class="form-control" rows="5" id="about"
+                                            name="about" [(ngModel)]="property.about" #about="ngModel"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" *ngIf="updUser">
+                                <div class="col-md-5">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Property Status</label>
+                                        <span *ngIf="property.status == 'undefined' ">
+                                            <button class="btn btn-primary btn-round btn-xs">Not yet uploaded</button>
+                                        </span>
+                                        <span *ngIf="property.status == 0 ">
+                                            <button class="btn btn-warning btn-round btn-xs">Inactive</button>
+                                        </span>    
+                                        <span *ngIf="property.status == 1 ">
+                                            <button class="btn btn-success btn-round btn-xs">Active</button>
+                                        </span>                                      
+                                    </div>
+                                </div> 
+                                <div class="col-md-5">
+                                    <div class="form-group label-floating">
+                                        <div class="radio">
+                                            <label>
+                                                    <input type="radio" [value]="0" 
+                                                    [checked]="property.status===0"
+                                                    (change)="onStatusChange(0)"
+                                                    name="pstatus">
+                                                    Inactive
+                                                </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                    <input type="radio" [value]="1" 
+                                                    [checked]="property.status===1"
+                                                    (change)="onStatusChange(1)"
+                                                    name="pstatus">
+                                                    Active
+                                                </label>
+                                        </div>                                           
+                                    </div>
+                                </div>
+                            </div>                             
+                            <button  *ngIf="!updUser" type="submit" class="btn btn-rose pull-right">Update Profile</button>
+                            <div class="clearfix"></div>
+                        </form>
+                        <button *ngIf="updUser" (click)="updateUserStatus()" 
+                        class="btn btn-rose pull-right">Update Status</button>
+                        <div class="clearfix"></div>                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-profile">
+                    <div class="card-avatar">
+                        <a href="#pablo">
+                            <img class="img" #prfPreview src="http://studphotos.s3.amazonaws.com/img/400x400.jpg">
+                        </a>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">{{property.fname}} {{property.lname}}</h4>
+                        <p class="description">
+                            {{property.about}}
+                        </p>
+                        <input #profileinput class="ng-hide" id="profile-input" name="profile-input" input-files="files"
+                        type="file"  accept="image/*"
+                        (change)="readUrl($event)"/>
+                        
+                        <label for="profile-input" class="btn btn-rose pull-right" #uploadButton id="uploadButton"
+                        >Upload Photo</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,104 @@
+{
+  "_args": [
+    [
+      "angular-fontawesome",
+      "/Users/uma/projects/attendance"
+    ]
+  ],
+  "_from": "angular-fontawesome@latest",
+  "_id": "angular-fontawesome@1.0.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/angular-fontawesome",
+  "_nodeVersion": "4.4.2",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/angular-fontawesome-1.0.0.tgz_1462808609835_0.5720846876502037"
+  },
+  "_npmUser": {
+    "email": "tuckersworld@gmail.com",
+    "name": "tuckbick"
+  },
+  "_npmVersion": "2.15.0",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "angular-fontawesome",
+    "raw": "angular-fontawesome",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular-fontawesome/-/angular-fontawesome-1.0.0.tgz",
+  "_shasum": "5d1dafb9cbc88ec7210a018020711b3238b5f79e",
+  "_shrinkwrap": null,
+  "_spec": "angular-fontawesome",
+  "_where": "/Users/uma/projects/attendance",
+  "author": {
+    "email": "paul@picardylearning.com",
+    "name": "Paul Marbach"
+  },
+  "bugs": {
+    "url": "https://github.com/picardy/angular-fontawesome/issues"
+  },
+  "dependencies": {},
+  "description": "Angular directive for FontAwesome",
+  "devDependencies": {
+    "bower": "1.3.12",
+    "grunt": "^0.4.4",
+    "grunt-bump": "~0.0.15",
+    "grunt-contrib-clean": "0.6.0",
+    "grunt-contrib-connect": "^0.11.2",
+    "grunt-contrib-copy": "0.8.0",
+    "grunt-contrib-uglify": "0.8.0",
+    "grunt-eslint": "^17.2.0",
+    "grunt-gh-pages": "^0.10.0",
+    "grunt-karma": "^0.8.2",
+    "karma": "^0.12.9",
+    "karma-chrome-launcher": "0.1.7",
+    "karma-firefox-launcher": "0.1.4",
+    "karma-jasmine": "0.3.5",
+    "karma-ng-html2js-preprocessor": "^0.1.0",
+    "karma-ng-scenario": "^0.1.0",
+    "karma-phantomjs-launcher": "0.1.4",
+    "karma-safari-launcher": "0.1.1"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "5d1dafb9cbc88ec7210a018020711b3238b5f79e",
+    "tarball": "https://registry.npmjs.org/angular-fontawesome/-/angular-fontawesome-1.0.0.tgz"
+  },
+  "gitHead": "8919d21e442a511074c7c0e8f71d7dd1dbe47fa1",
+  "homepage": "https://github.com/picardy/angular-fontawesome#readme",
+  "keywords": [
+    "angular",
+    "directive",
+    "fontawesome"
+  ],
+  "license": "MIT",
+  "main": "dist/angular-fontawesome.js",
+  "maintainers": [
+    {
+      "name": "fastfrwrd",
+      "email": "fastfrwrd@gmail.com"
+    },
+    {
+      "name": "tuckbick",
+      "email": "tuckersworld@gmail.com"
+    }
+  ],
+  "name": "angular-fontawesome",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/picardy/angular-fontawesome.git"
+  },
+  "scripts": {
+    "test": "./node_modules/bower/bin/bower install; ./node_modules/karma/bin/karma start --browsers Firefox --single-run"
+  },
+  "version": "1.0.0"
+}

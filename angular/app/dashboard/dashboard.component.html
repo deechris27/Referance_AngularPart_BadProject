@@ -1,0 +1,325 @@
+<div class="main-content container-bk">
+    <div class="container-fluid">
+        <div class="row">
+            <button *ngIf="userType == 1" type="button" class="btn btn-rose pull-right"
+                    id="right-panel-link"
+                    href="property"
+                    (click)="onClick()"
+                    >
+                New Property
+            </button>
+        </div>
+        <div class="row">
+            <div *ngIf="userType == 0">
+                <div class="col-md-4 col-md-offset-4 col-sm-offset-3">
+                    <div class="card">
+                        <div class="card-header card-header-icon" data-background-color="rose">
+                            <i class="material-icons">attach_money</i>
+                        </div>
+                        <div class="card-content">
+                            <h4 class="card-title">Pay your rent online
+                                <small class="category">just like your other bills</small>
+                            </h4>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="form-group text-center">
+                                        <h5>Even if your landlord doesn’t live in the 21st century, you do.</h5> 
+                                        <h6>Pay your rent online, and invite your landlord to flarow.com </h6>
+                                    </div>
+                                </div>                                           
+                            </div>
+                            <a href="#/invite" class="btn btn-rose center-block">Invite your Landlord</a>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+            <div *ngIf="userType == 1">
+                <div class="col-lg-4 col-md-6 col-sm-4">
+                    <div class="card card-stats">
+                        <div class="card-header" data-background-color="orange">
+                            <i class="material-icons">account_balance_wallet</i>
+                        </div>
+                        <div class="card-content">
+                            <p class="category">{{thisMonth}}'s Rent</p>
+                            <table align="center" cellpadding="0" cellspacing="50" border="0">
+                                <tr>
+                                    <td style="width:45%"><strong>Rs.{{ownerData.rent_due}}</strong>
+                                    </td>
+                                    <td style="width:45%"><strong>Rs.{{ownerData.rent_collected}}</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center">Due</td>
+                                    <td align="center">Collected</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats">
+                                <i class="material-icons">attach_money</i><a href="#/tph">View all</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="card card-stats" >
+                        <div class="card-header" data-background-color="red">
+                            <i class="material-icons">bug_report</i>
+                        </div>
+                        <div class="card-content">
+                            <p class="category">Properties Listed</p>
+                            <h3 class="title">{{ownerData.property_count}}</h3>
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats">
+                                <i class="material-icons">business</i>Properties
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="card card-stats" >
+                        <div class="card-header" data-background-color="green">
+                            <i class="material-icons">visibility</i>
+                        </div>
+                        <div class="card-content">
+                            <p class="category">New Approvals</p>
+                            <h3 class="title">{{ownerData.visits}}</h3>
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats">
+                                <i class="material-icons">directions_walk</i>approvals
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+            <div *ngIf="userType == 2">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="card card-stats">
+                        <div class="card-header" data-background-color="orange">
+                            <i class="material-icons">account_circle</i>
+                        </div>
+                        <div class="card-content">
+                            <p class="category">New Tenants</p>
+                            <h3 class="title">{{ownerData.tenants}}</h3>
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats">
+                                <i class="material-icons">date_range</i> Current Month
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="card card-stats">
+                        <div class="card-header" data-background-color="red">
+                            <i class="material-icons">visibility</i>
+                        </div>
+                        <div class="card-content">
+                            <p class="category">New Visits</p>
+                            <h3 class="title">{{ownerData.visits}}</h3>
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats">
+                                <i class="material-icons text-danger">directions_walk</i>Scheduled visits
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="card card-stats">
+                        <div class="card-header" data-background-color="red">
+                            <i class="material-icons">account_box</i>
+                        </div>
+                        <div class="card-content">
+                            <p class="category">New Registration</p>
+                            <h3 class="title">{{ownerData.registration}}</h3>
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats">
+                                <i class="material-icons text-danger">account_box</i>New users
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="card card-stats">
+                        <div class="card-header" data-background-color="red">
+                            <i class="material-icons">event_seat</i>
+                        </div>
+                        <div class="card-content">
+                            <p class="category">New Owners</p>
+                            <h3 class="title">{{ownerData.owners}}</h3>
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats">
+                                <i class="material-icons text-danger">event_seat</i>New owners
+                            </div>
+                        </div>
+                    </div>
+                </div>                               
+            </div>
+        </div>
+        
+        <div class="row" *ngFor="let p of property; let i = index" [ngSwitch]="i % 3">
+            <div class="col-lg-4 col-md-6" *ngSwitchCase="0">
+                <div class="card card-product">
+                    <div class="card-image" data-header-animation="true">
+                        <a href="#pablo">
+                            <img class="img thumbnail"
+                             src="http://studphotos.s3.amazonaws.com/{{property[i].owner_id}}_{{property[i].id}}.jpg">
+                        </a>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-actions">
+                            <button type="button" class="btn btn-danger btn-simple fix-broken-card">
+                                <i class="material-icons">build</i> Fix Header!
+                            </button>
+                            <!-- <button type="button" class="btn btn-default btn-simple" rel="tooltip" data-placement="bottom" title="View">
+                                <i class="material-icons">art_track</i>
+                            </button> -->
+                            <button type="button" class="btn btn-success btn-simple" rel="tooltip" 
+                              data-placement="bottom" title="Edit" 
+                              [routerLink]="['/property', property[i]]">
+                                <i class="material-icons">edit</i>
+                            </button>
+                            <button type="button" class="btn btn-success btn-simple" rel="tooltip" 
+                                data-placement="bottom" title="Tag Tenant" 
+                                [routerLink]="['/tagProp', property[i].id, property[i].title]">
+                                <i class="material-icons">group_add</i>
+                            </button>
+                            <button type="button" class="btn btn-danger btn-simple" 
+                                rel="tooltip" data-placement="bottom" title="Remove"
+                                (click)="onDelete(property[i].id)">
+                                <i class="material-icons">close</i>
+                            </button>
+                        </div>
+                        <h4 class="card-title">
+                            <a href="#pablo" [textContent]="property[i].title"></a>
+                        </h4>
+                        <div class="card-description" [textContent]="property[i].details"></div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="price" *ngIf="property[i].status!==0">
+                            <h4 [textContent]="property[i].rent"></h4>
+                        </div>
+                        <div class="stats" *ngIf="property[i].status==0">
+                            <i class="material-icons text-danger">warning</i>Pending Verification
+                        </div>
+                        <div class="stats pull-right">
+                            <p class="category" [textContent]="property[i].address"><i class="material-icons">place</i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" *ngSwitchCase="0">
+                <span *ngIf="property?.length > i+1">
+                <div class="card card-product">
+                    <div class="card-image" data-header-animation="true">
+                        <a href="#pablo">
+                                <img class="img thumbnail"
+                                src="http://studphotos.s3.amazonaws.com/{{property[i+1].owner_id}}_{{property[i+1].id}}.jpg">
+                        </a>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-actions">
+                            <button type="button" class="btn btn-danger btn-simple fix-broken-card">
+                                <i class="material-icons">build</i> Fix Header!
+                            </button>
+                            <!-- <button type="button" class="btn btn-default btn-simple" 
+                               rel="tooltip" data-placement="bottom" title="View">
+                                <i class="material-icons">art_track</i>
+                            </button> -->
+                            <button type="button" class="btn btn-success btn-simple" rel="tooltip" 
+                                data-placement="bottom" title="Edit"
+                                [routerLink]="['/property', property[i+1]]">
+                                <i class="material-icons">edit</i>
+                            </button>
+                            <button type="button" class="btn btn-success btn-simple" rel="tooltip" 
+                                data-placement="bottom" title="Tag Tenant" 
+                                [routerLink]="['/tagProp', property[i+1].id, property[i+1].title]">
+                                <i class="material-icons">group_add</i>
+                            </button>                            
+                            <button type="button" class="btn btn-danger btn-simple" 
+                              rel="tooltip" data-placement="bottom" title="Remove"
+                              (click)="onDelete(property[i+1].id)">
+                                <i class="material-icons">close</i>
+                            </button>
+                        </div>
+                        <h4 class="card-title">
+                            <a href="#pablo"[textContent]="property[i+1].title"></a>
+                        </h4>
+                        <div class="card-description" [textContent]="property[i+1].details"></div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="price" *ngIf="property[i+1].status!==0">
+                            <h4 [textContent]="property[i+1].rent"></h4>
+                        </div>
+                        <div class="stats" *ngIf="property[i+1].status==0">
+                            <i class="material-icons text-danger">warning</i>Pending Verification
+                        </div>                        
+                        <div class="stats pull-right">
+                            <p class="category" [textContent]="property[i+1].address"><i class="material-icons">place</i></p>
+                        </div>
+                    </div>
+                </div>
+            </span>
+            </div>
+            <div class="col-lg-4 col-md-6" *ngSwitchCase="0">
+                <span *ngIf="property?.length > i+2">
+                    <div class="card card-product">
+                        <div class="card-image" data-header-animation="true">
+                            <a href="#pablo">
+                                    <img class="img thumbnail"
+                                    src="http://studphotos.s3.amazonaws.com/{{property[i+2].owner_id}}_{{property[i+2].id}}.jpg">
+                            </a>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-actions">
+                                <button type="button" class="btn btn-danger btn-simple fix-broken-card">
+                                    <i class="material-icons">build</i> Fix Header!
+                                </button>
+                                <!-- <button type="button" class="btn btn-default btn-simple" rel="tooltip" 
+                                        data-placement="bottom" title="View">
+                                    <i class="material-icons">art_track</i>
+                                </button> -->
+                                <button type="button" class="btn btn-success btn-simple" rel="tooltip" 
+                                        data-placement="bottom" title="Edit" 
+                                        [routerLink]="['/property', property[i+2]]">
+                                    <i class="material-icons">edit</i>
+                                </button>
+                                <button type="button" class="btn btn-success btn-simple" rel="tooltip" 
+                                    data-placement="bottom" title="Tag Tenant" 
+                                    [routerLink]="['/tagProp', property[i+2].id, property[i+2].title]">
+                                    <i class="material-icons">group_add</i>
+                                </button>                                
+                                <button type="button" class="btn btn-danger btn-simple" 
+                                   rel="tooltip" data-placement="bottom" title="Remove"
+                                   (click)="onDelete(property[i+2].id)">
+                                    <i class="material-icons">close</i>
+                                </button>
+                            </div>
+                            <h4 class="card-title">
+                                <a href="#pablo"[textContent]="property[i+2].title"></a>
+                            </h4>
+                            <div class="card-description" [textContent]="property[i+2].details"></div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="price" *ngIf="property[i+2].status!==0">
+                                <h4 [textContent]="property[i+2].rent"></h4>
+                            </div>
+                            <div class="stats" *ngIf="property[i+2].status==0">
+                                <i class="material-icons text-danger">warning</i>Pending Verification
+                            </div>                            
+                            <div class="stats pull-right">
+                                <p class="category" [textContent]="property[i+2].address"><i class="material-icons">place</i></p>
+                            </div>
+                        </div>
+                    </div>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

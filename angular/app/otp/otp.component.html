@@ -1,0 +1,76 @@
+<div class="wrapper wrapper-full-page">
+    <nav class="navbar navbar-primary navbar-transparent navbar-absolute">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/#/home">FLAROW</a>
+            </div>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active">
+                        <a href="/#/login">
+                            <i class="material-icons">fingerprint</i> Login
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="full-page login-page" filter-color="black">
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
+                        <form #f="ngForm">
+                            <div class="card card-login card-hidden">
+                                <div class="card-header text-center" data-background-color="red">
+                                    <i class="fa fa-shield fa-3x" aria-hidden="true"></i>
+                                    <h4 class="card-title">OTP</h4>
+                                </div>
+                                <div class="card-content">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">security</i>
+                                        </span>
+                                        <div class="row">
+                                            <div class="col-md-5 col-sm-5">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">OTP</label>
+                                                    <input type="text" class="form-control" id="uname" name="uname" [ngModel]="name" required #uname="ngModel">
+                                                    <small [hidden]="uname.valid || (uname.pristine && !f.submitted)" class="text-danger">
+                                                        Please enter your otp
+                                                    </small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-7 col-sm-6">
+                                                <div class="form-group label-floating">
+                                                    <button class="btn btn-rose btn-simple btn-wd btn-lg pull-right" (click)="resend()">
+                                                        Resend OTP?
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+
+                                </div>
+                                <div class="footer text-center">
+                                    <button [disabled]="!f.valid" (click)="onSubmit($event.target, f)"  
+                                    class="btn btn-rose btn-simple btn-wd btn-lg">Submit</button>
+                                    <a href="#/register" 
+                                    class="btn btn-rose btn-simple btn-wd btn-lg">Sign up</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="full-page-background" style="background-image: url(//studphotos.s3.amazonaws.com/img/apartment.jpg) "></div>
+    </div>
+</div>

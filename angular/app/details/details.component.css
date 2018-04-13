@@ -1,0 +1,7 @@
+.Landing-cover-d{
+    background-color: white;
+    background-image: url('http://studphotos.s3.amazonaws.com/img/slider-bg-01.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 700px;
+}

@@ -1,0 +1,194 @@
+<div class="main-search-container dark-overlay">
+    <div class="main-search-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    
+                    <h2 class="text-center"><strong>Switch to Smarter Renting</strong></h2>
+                    <br>
+                    <h4 class="text-center"><strong>Modern Property & Rental Management Solution to Outsource your Headache of Managing</strong></h4>
+                    <h4 class="text-center"><strong>Monthly Rentals, Due Dates, Tenant KYC Documents</strong></h4>
+                    <h4 class="text-center"><strong>for HomeOwners, Property Managers & Tenants</strong></h4>
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <br>
+                    <h4 class="text-center">
+                        <a href="#/register" *ngIf="!showReg" class="btn btn-rose btn-round">
+                            <h4><strong>Get Started. It's Free!!</strong></h4>
+                        </a>
+                        <a href="#/dashboard" *ngIf="showReg" class="btn btn-rose btn-round">
+                            <h4><strong>Get Started. It's Free!!</strong></h4>
+                        </a>
+                        <br>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video -->
+    <div class="video-container">
+        <video poster="http://studphotos.s3.amazonaws.com/images/main-search-video-poster.jpg" loop autoplay muted>
+            <source src="https://0.s3.envato.com/h264-video-previews/ab5c2b79-0c56-4a35-896f-7a53d6dc0fed/10691103.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
+
+		<!-- Content
+================================================== -->
+
+<!-- how it works -->
+<div class="container">
+        
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h2 class="headline centered margin-top-80">
+                How Flarow Works
+                <span class="margin-top-25"></span>
+            </h2>
+        </div>
+    </div>
+
+    <div class="row icons-container">
+        <!-- Stage -->
+        <div class="col-md-3">
+            <div class="icon-box-2 with-line">
+                <i class="im im-icon-Map2"></i>
+                <h3>List your Property</h3>
+                <p>Add your property on the Flarow Website with all the necessary details</p>
+            </div>
+        </div>
+
+        <!-- Stage -->
+        <div class="col-md-3">
+            <div class="icon-box-2 with-line">
+                <i class="im im-icon-Add-User"></i>
+                <h3>Invite your Tenant/Landlord</h3>
+                <p>Invite your Landlord/Tenant and tag them to the property added</p>
+            </div>
+        </div>
+
+        <!-- Stage -->
+        <div class="col-md-3">
+            <div class="icon-box-2 with-line">
+                <i class="im im-icon-Upload-toCloud"></i>
+                <h3>Upload your Documents</h3>
+                <p>Tenants need to upload their KYC documents, which will be verified</p>
+            </div>
+        </div>
+
+        <!-- Stage -->
+        <div class="col-md-3">
+            <div class="icon-box-2">
+                <i class="im im-icon-Happy"></i>
+                <h3>Manage your Rentals</h3>
+                <p>Start managing your monthly Rentals, Rental Due Dates and loads more</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- how it works end -->
+
+<hr>
+
+<section class="fullwidth margin-top-65 padding-top-75 padding-bottom-70" data-background-color="#f8f8f8">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12">
+                <h3 class="headline centered margin-top-75">
+                    For HomeOwners/Property Managers
+                    <span>Access
+                        <i>the most desirable</i> Benefits</span>
+                </h3>
+            </div>
+
+            <div class="col-md-12">
+                <!-- You can now use your library component in app.component.html -->
+                <ngx-slick class="carousel" #slickModal="slick-modal" [config]="ownerSlideConfig" (afterChange)="afterChange($event)">
+                    <div ngxSlickItem *ngFor="let item of ownerItems" class="carousel-item">
+                        <div class="listing-item">
+                            <img src={{item.imgSrc}} alt="" width="100%">
+                            <div class="listing-item-content">
+                                <h3>{{item.text}}</h3>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </ngx-slick>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12">
+                <h3 class="headline centered margin-top-75">
+                    For Tenants
+                    <span>Access
+                        <i>the most desirable</i> Benefits</span>
+                </h3>
+            </div>
+
+            <div class="col-md-12">
+                <!-- You can now use your library component in app.component.html -->
+                <ngx-slick class="carousel" #slickModal="slick-modal" [config]="tenantSlideConfig" (afterChange)="afterChange($event)">
+                    <div ngxSlickItem *ngFor="let item of tenantItems" class="carousel-item">
+                        <div class="listing-item">
+                            <img src={{item.imgSrc}} alt="" width="100%">
+                            <div class="listing-item-content">
+                                <h3>{{item.text}}</h3>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </ngx-slick>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- <section class="fullwidth margin-top-65 padding-top-75 padding-bottom-70" data-background-color="#f8f8f8">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12">
+                <h3 class="headline centered margin-bottom-45">
+                    Popular Stays
+                    <span>Plug-in at <i>the most desirable stays</i> in Chennai</span>
+
+                </h3>
+            </div>
+
+            <div class="col-md-12">
+                <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig" (afterChange)="afterChange($event)">
+                    <div ngxSlickItem *ngFor="let item of items" class="carousel-item">
+                        <div class="listing-item">
+                            <a [routerLink]="['/propdetail', item.id]">
+                                <img src="http://studphotos.s3.amazonaws.com/{{item.owner_id}}_{{item.id}}.jpg" alt="" width="100%">
+                            </a>
+                            <div class="listing-badge now-open">Now Available</div>
+                            <div class="listing-item-content">
+                                <h3>2BHK</h3>
+                                <span>Andrews Dr, Pleasanton, 94588</span>
+                            </div>
+                        </div>
+                    </div>
+                </ngx-slick>
+            </div>
+            <div class="col-md-12 centered margin-top-40" style="text-align:center;">
+                <a [routerLink]="['/properties']" class="btn btn-rose btn-round"><strong>See All</strong></a>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+
+<div class="row margin-top-40">
+
+</div>

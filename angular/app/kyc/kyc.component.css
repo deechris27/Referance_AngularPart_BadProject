@@ -1,0 +1,33 @@
+.square-box{
+    width:200px;
+    height: 125px;
+}
+
+.file-hid{
+    display: none !important;
+}
+
+#file-input { display: none !important; }
+
+.file-input-hide {
+     position: relative;
+     left: -6em;
+}
+
+.bring-forward {
+     z-index:10;
+}
+ 
+img {
+  background-image: url("//studphotos.s3.amazonaws.com/img/800x500.jpg");
+  overflow: hidden;
+}
+
+img:before {
+  content: " ";
+  font-size: 1000px;
+}
+
+.container-bk{
+  background-color: #eee;
+}

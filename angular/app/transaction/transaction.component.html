@@ -1,0 +1,25 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="col-lg-6">
+                    <div class="card card-pricing card-raised">
+                        <div class="card-header card-header-icon" data-background-color="purple">
+                            <i class="fa fa-money fa-2x" aria-hidden="true"></i>
+                        </div>
+                        <div class="card-content">
+                            <h4 class="card-title">Transaction status</h4>
+                            <div class="row" *ngIf="transaction.status">
+                                <h5>Thank you for your payment</h5>
+                            </div>
+                            <div>
+                                <h3>Your transaction with transaction Id {{transaction.payment_id}}</h3>
+                                <h4>for Rs. {{transaction.amount}} has been {{transaction.description}}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

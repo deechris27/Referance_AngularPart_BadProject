@@ -1,0 +1,130 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                    <div class="card card-product">
+                        <a href="#pablo">
+                            <img class="img" #prfPreview src="http://studphotos.s3.amazonaws.com/img/400x400.jpg"
+                            onerror="this.src='http://studphotos.s3.amazonaws.com/img/400x400.jpg';"/>
+                        </a>
+                        <div class="card-content">
+                            <h4 class="card-title">{{booking.name}}</h4>
+                        </div>
+                    </div>
+                </div>            
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-icon" data-background-color="rose">
+                        <i class="material-icons">perm_identity</i>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Booking -
+                            <small class="category">status</small>
+                        </h4>
+                        <form (ngSubmit)="changeStatus(f); f.reset()" #f="ngForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Propery</label>
+                                        <p>{{booking.title}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Owner Name</label>
+                                        <p>{{booking.owner}}</p>
+                                    </div>
+                                </div>
+                            </div>                             
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Tenant Name</label>
+                                        <p>{{booking.tenant}}</p>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating">
+                                        <md-form-field>
+                                            <input mdInput name="startDt" [(ngModel)]="booking.startDate" [mdDatepicker]="picker1" placeholder="Agreement start date">
+                                            <md-datepicker-toggle mdSuffix [for]="picker1"></md-datepicker-toggle>
+                                            <md-datepicker #picker1></md-datepicker>
+                                        </md-form-field>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating">
+                                        <md-form-field>
+                                            <input mdInput name="endDt" [(ngModel)]="booking.endDate" [mdDatepicker]="picker2" placeholder="Agreement end date">
+                                            <md-datepicker-toggle mdSuffix [for]="picker2"></md-datepicker-toggle>
+                                            <md-datepicker #picker2></md-datepicker>
+                                        </md-form-field>
+                                    </div>
+                                </div>
+                            </div>   
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Booking Status</label>
+                                        <span *ngIf="booking.status == 1 ">
+                                            <button class="btn btn-success btn-round btn-xs">Booked</button>
+                                        </span>
+                                        <span *ngIf="booking.status == 3 ">
+                                            <button class="btn btn-failure btn-round btn-xs">Left</button>
+                                        </span>    
+                                        <span *ngIf="booking.status == 2 ">
+                                            <button class="btn btn-warning btn-round btn-xs">Booking Not Completed</button>
+                                        </span>                                      
+                                    </div>
+                                </div>  
+                            </div>                                                                                                                                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating">
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" [value]="1" 
+                                                [checked]="booking.status===1"
+                                                (change)="onStatusChange(1)"
+                                                name="status">
+                                                Booked
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" [value]="3" 
+                                                [checked]="booking.status===3"
+                                                (change)="onStatusChange(3)"
+                                                name="status">
+                                                Left
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" [value]="2" 
+                                                [checked]="booking.status===2"
+                                                (change)="onStatusChange(2)"
+                                                name="status">
+                                                Booking Not Completed
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                            <button type="submit" class="btn btn-rose pull-right">Update Status</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

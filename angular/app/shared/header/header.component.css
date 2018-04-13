@@ -1,0 +1,14 @@
+a.button.border {
+    color: red;
+    border: 1px solid red;
+}
+
+a.button.border:hover {
+	background-color: red;
+	color: #fff;
+	opacity: 1;
+}
+
+.header-widget .button, .header-widget .button.border {
+	margin-right: 10px;
+}

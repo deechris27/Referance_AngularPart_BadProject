@@ -1,0 +1,331 @@
+/*----------------------------------- */
+/* Footer
+------------------------------------- */
+#footer {
+	padding: 70px 0 0 0;
+	background-color: #fff;
+	border-top: 1px solid rgba(0,0,0,0.09);
+	font-size: 16px;
+}
+
+#footer.sticky-footer { box-shadow: none; }
+#footer.dark { border-top: none; }
+
+#footer h4 {
+	color: #333;
+	font-size: 21px;
+	margin-bottom: 25px;
+}
+
+.footer-shadow {
+	width: 100%;
+	display: block;
+	background: #fff; 
+	height: 200px;
+	margin-top: -200px;
+	position: relative;
+	z-index: -1;
+	box-shadow: 0 20px 40px -20px rgba(0,0,0,0.06);
+}
+
+.text-widget span { color: #707070; }
+.text-widget span.address { display: block; margin-bottom: 10px;}
+
+#footer a {
+	color: #66676b;
+}
+
+/*  Links  */
+#footer ul.footer-links {
+	margin: 0 0 15px 0;
+	padding: 0;
+	width: 50%;
+	box-sizing: border-box;
+	display: inline-block;
+	float: left;
+}
+
+#footer .footer-links li { position: relative; list-style: none; }
+
+#footer .footer-links li a {
+	padding: 0 0 9px 16px;
+	display: inline-block;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+	color: #707070;
+	line-height: 21px;
+}
+
+#footer .footer-links li a:hover {
+	padding-left:22px;
+	color: #66676b;
+}
+
+#footer .footer-links li:before {
+	font-family: "FontAwesome";
+	font-size: 20px;
+	content: "\f105";
+	position: absolute;
+	left: 0;
+	top: -2px;
+	padding: 0 7px 0 0;
+	color: #ccc;
+}
+
+
+/* Footer Bottom */
+.copyrights {
+	color: #707070;
+	border-top: 1px solid rgba(0,0,0,0.09);
+	margin-top: 60px;
+	text-align: center;
+	padding: 40px 0;
+	display: inline-block;
+	width: 100%;
+}
+
+#footer.alt .copyrights { 
+	margin-top:0;
+	border: none;
+	padding: 25px;
+}
+
+.copyrights a { color: #707070; }
+
+
+/* Dark Styles */
+#footer.dark {
+	background: #222;
+	color: #aaa;
+}
+
+#footer.dark a,
+#footer.dark h4,
+#footer.dark a:hover {
+	color: #fff;
+}
+
+#footer.dark .text-widget,
+#footer.dark .text-widget span,
+#footer.dark .footer-links li a {
+	color: #aaa;
+}
+
+#footer.dark .footer-links li a:hover { color: #fff; }
+#footer.dark .footer-links li:before { color: #666; }
+
+#footer.dark .copyrights {
+	color: #aaa;
+	border-top: 1px solid rgba(255,255,255,0.09);
+}
+
+#footer .social-icons li a {
+    opacity: 0.8;
+    transition: opacity 0.35s;
+}
+
+#footer .social-icons li a:hover { opacity: 1; }
+
+
+/* ---------------------------------- */
+/* Back to top
+------------------------------------- */
+#backtotop {
+	position: fixed;
+	right: 0;
+	opacity: 0;
+	visibility: hidden;
+	bottom: 25px;
+	margin: 0 25px 0 0;
+	z-index: 9999;
+	transition: 0.35s;
+	transform: scale(0.7);
+}
+
+#backtotop.visible {
+	opacity: 1;
+	visibility: visible;
+	transform: scale(1);
+}
+
+#backtotop a {
+	text-decoration: none;
+	border: 0 none;
+	display: block;
+	width: 46px;
+	height: 46px;
+	background-color: #66676b;
+	opacity: 1;
+    transition: all 0.3s;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 26px
+}
+
+body #backtotop a { color: #fff; }
+
+#backtotop a:after {
+	content: "\f106";
+	font-family: "FontAwesome";
+	position: relative;
+	display: block;
+	top: 50%;
+	-webkit-transform: translateY(-55%);
+	transform: translateY(-55%);
+}
+
+
+.social-icons li i {
+	font-family: "fontello";
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
+	display: inline-block;
+	text-decoration: inherit;
+	text-align: center;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 16px;
+	font-size: 16px;
+	width: auto;
+}
+
+.icon-delicious:before { content: '\23'; } /* '#' */
+.icon-paypal:before { content: '\24'; } /* '$' */
+.icon-gplus:before { content: '\f0d5'; } /* '+' */
+.icon-stumbleupon:before { content: '\2f'; } /* '/' */
+.icon-fivehundredpx:before { content: '\30'; } /* '0' */
+.icon-pinterest:before { content: '\31'; } /* '1' */
+.icon-forrst:before { content: '\3a'; } /* ':' */
+.icon-digg:before { content: '\3b'; } /* ';' */
+.icon-spotify:before { content: '\3d'; } /* '=' */
+.icon-reddit:before { content: '\3e'; } /* '&gt;' */
+.icon-appstore:before { content: '\41'; } /* 'A' */
+.icon-blogger:before { content: '\42'; } /* 'B' */
+.icon-dribbble:before { content: '\44'; } /* 'D' */
+.icon-evernote:before { content: '\45'; } /* 'E' */
+.icon-flickr:before { content: '\46'; } /* 'F' */
+.icon-linkedin:before { content: '\4c'; } /* 'L' */
+.icon-rss:before { content: '\52'; } /* 'R' */
+.icon-twitter:before { content: '\54'; } /* 'T' */
+.icon-youtube:before { content: '\55'; } /* 'U' */
+.icon-vimeo:before { content: '\56'; } /* 'V' */
+.icon-xing:before { content: '\58'; } /* 'X' */
+.icon-yahoo:before { content: '\59'; } /* 'Y' */
+.icon-amazon:before { content: '\61'; } /* 'a' */
+.icon-steam:before { content: '\62'; } /* 'b' */
+.icon-dropbox:before { content: '\64'; } /* 'd' */
+.icon-facebook:before { content: '\66'; } /* 'f' */
+.icon-github:before { content: '\67'; } /* 'g' */
+.icon-lastfm:before { content: '\6c'; } /* 'l' */
+.icon-tumblr:before { content: '\74'; } /* 't' */
+.icon-wordpress:before { content: '\77'; } /* 'w' */
+.icon-linkedin-rect:before { content: '\f31b'; } /* '?' */
+.icon-instagram:before { content: '\f31f'; } /* '?' */
+
+/* Social Icons styles for footer
+------------------------------------- */
+.listing-share .social-icons li a,
+.agent .social-icons li a,
+#footer .social-icons li a {
+	width: 38px;
+	height: 40px;
+	background-color: transparent;
+}
+
+.agent .social-icons,
+#footer .social-icons { 
+	position: relative;
+	left: -13px;
+}
+
+.agent .social-icons li,
+#footer .social-icons li {
+	margin: 0;
+	padding: 0;
+	float: left;
+	line-height: 0;
+}
+
+.listing-share .social-icons li a:before,
+.listing-share .social-icons li a i,
+.agent .social-icons li a:before,
+.agent .social-icons li a i,
+#footer .social-icons li a:before,
+#footer .social-icons li a i { font-size: 15px; color: #a0a0a0; }
+
+.listing-share .social-icons li .twitter:before,
+.listing-share .social-icons li .twitter i:before,
+.listing-share .social-icons li .vimeo:before,
+.listing-share .social-icons li .vimeo i:before,
+.agent .social-icons li .twitter:before,
+.agent .social-icons li .twitter i:before,
+.agent .social-icons li .vimeo:before,
+.agent .social-icons li .vimeo i:before,
+#footer .social-icons li .twitter:before,
+#footer .social-icons li .twitter i:before,
+#footer .social-icons li .vimeo:before,
+#footer .social-icons li .vimeo i:before { font-size: 13px; }
+
+.listing-share .social-icons li a:hover,
+.agent .social-icons li a:hover,
+#footer .social-icons li a:hover {
+	background: transparent !important;
+	border-color: transparent; 
+}
+
+.listing-share .social-icons li a:hover i,
+.agent .social-icons li a:hover i,
+#footer .social-icons li a:hover i {
+	color: #66676b;
+}
+
+.facebook i, .facebook:before { margin: 13px 0 0 16px; }
+.facebook:before { content: "\66"; top: 0; opacity:1; }
+.facebook:hover:before { top: 30px; opacity: 0; }
+.facebook:hover { background-color: #4a6d9d !important; }
+.social-icons.color .facebook,
+.social-icons.fixed .facebook:hover { background-color: #4a6d9d ; border-color: #4a6d9d ;}
+
+
+/* ---------------------------------- */
+/* Offsets
+------------------------------------- */
+
+/* Margin Top */
+.margin-top-0  { margin-top: 0 !important; }
+.margin-top-1  { margin-top: 1px !important; }
+.margin-top-2  { margin-top: 2px !important; }
+.margin-top-3  { margin-top: 3px !important; }
+.margin-top-4  { margin-top: 4px !important; }
+.margin-top-5  { margin-top: 5px !important; }
+.margin-top-6  { margin-top: 6px !important; }
+.margin-top-7  { margin-top: 7px !important; }
+.margin-top-8  { margin-top: 8px !important; }
+.margin-top-9  { margin-top: 9px !important; }
+.margin-top-10 { margin-top: 10px !important; }
+.margin-top-15 { margin-top: 15px !important; }
+.margin-top-20 { margin-top: 20px !important; }
+.margin-top-25 { margin-top: 25px !important; }
+.margin-top-30 { margin-top: 30px !important; }
+.margin-top-35 { margin-top: 35px !important; }
+.margin-top-40 { margin-top: 40px !important; }
+.margin-top-45 { margin-top: 45px !important; }
+.margin-top-50 { margin-top: 50px !important; }
+.margin-top-55 { margin-top: 55px !important; }
+.margin-top-60 { margin-top: 60px !important; }
+.margin-top-65 { margin-top: 0px !important;}
+.margin-top-70 { margin-top: 70px !important; }
+.margin-top-75 { margin-top: 75px !important; }
+.margin-top-80 { margin-top: 80px !important; }
+.margin-top-85 { margin-top: 85px !important; }
+.margin-top-90 { margin-top: 90px !important; }
+.margin-top-95 { margin-top: 95px !important; }
+.margin-top-100 { margin-top: 100px !important; }
+.margin-top-105 { margin-top: 105px !important; }
+.margin-top-110 { margin-top: 110px !important; }
+.margin-top-115 { margin-top: 115px !important; }
+.margin-top-120 { margin-top: 120px !important; }

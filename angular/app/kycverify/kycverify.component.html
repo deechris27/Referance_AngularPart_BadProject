@@ -1,0 +1,213 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-icon" data-background-color="purple">
+                        <i class="material-icons">assignment</i>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Know Your Customer Document Verification</h4>
+                        <div class="toolbar">
+                            <!--        Here you can write extra buttons/actions for the toolbar              -->
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="form-group label-floating">
+                                    <p>Aadhar card</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <img class="img" id="aadhar" #aadhar src="http://studphotos.s3.amazonaws.com/img/800x500.jpg"
+                                onerror="this.src='http://studphotos.s3.amazonaws.com/img/800x500.jpg';"/>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-group label-floating">
+                                    <label class="control-label">Verification Status</label>
+                                    <span *ngIf="kycStatus.pass_stat == 'undefined' ">
+                                        <button class="btn btn-primary btn-round btn-xs">Not yet uploaded</button>
+                                    </span>
+                                    <span *ngIf="kycStatus.pass_stat == 1 ">
+                                        <button class="btn btn-warning btn-round btn-xs">sent for verification</button>
+                                    </span>    
+                                    <span *ngIf="kycStatus.pass_stat == 2 ">
+                                        <button class="btn btn-success btn-round btn-xs">Approved</button>
+                                    </span>                                      
+                                    <span *ngIf="kycStatus.pass_stat == 3 ">
+                                        <button class="btn btn-failure btn-round btn-xs">Document Invalid</button>
+                                    </span> 
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-group label-floating">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" [value]="1" 
+                                            [checked]="kycStatus.a_stat==1"
+                                            (change)="onAadharStatusChange(1)"
+                                            name="astatus" [(ngModel)]="kycStatus.a_stat">
+                                            Verified
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" [value]="3" 
+                                            [checked]="kycStatus.a_stat==3"
+                                            (change)="onAadharStatusChange(3)"
+                                            name="astatus" [(ngModel)]="kycStatus.a_stat">
+                                            Invalid
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="form-group label-floating">
+                                    <p>Voter ID</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <img class="img" id="voterid" #voterid src="http://studphotos.s3.amazonaws.com/img/800x500.jpg"
+                                onerror="this.src='http://studphotos.s3.amazonaws.com/img/800x500.jpg';"/>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-group label-floating">
+                                    <label class="control-label">Verification Status</label>
+                                    <span *ngIf="kycStatus.v_stat == 'undefined' ">
+                                        <button class="btn btn-primary btn-round btn-xs">Not yet uploaded</button>
+                                    </span>
+                                    <span *ngIf="kycStatus.v_stat == 1 ">
+                                        <button class="btn btn-warning btn-round btn-xs">sent for verification</button>
+                                    </span>    
+                                    <span *ngIf="kycStatus.v_stat == 2 ">
+                                        <button class="btn btn-success btn-round btn-xs">Approved</button>
+                                    </span>                                      
+                                    <span *ngIf="kycStatus.v_stat == 3 ">
+                                        <button class="btn btn-failure btn-round btn-xs">Document Invalid</button>
+                                    </span> 
+                                </div>
+                            </div>                            
+                            <div class="col-md-5">
+                                <div class="form-group label-floating">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" [value]="1" 
+                                            [checked]="kycStatus.v_stat===1"
+                                            (change)="onVoterIdStatusChange(1)"
+                                            name="vstatus" checked="true">
+                                            Verified
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" [value]="3" 
+                                            [checked]="kycStatus.v_stat===3"
+                                            (change)="onVoterIdStatusChange(3)"
+                                            name="vstatus">
+                                            Invalid
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="form-group label-floating">
+                                    <p>Passport</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <img class="img" id="passport" #passport src="http://studphotos.s3.amazonaws.com/img/800x500.jpg"
+                                onerror="this.src='http://studphotos.s3.amazonaws.com/img/800x500.jpg';"/>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-group label-floating">
+                                    <label class="control-label">Verification Status</label>
+                                    <span *ngIf="kycStatus.pass_stat == 'undefined' ">
+                                        <button class="btn btn-primary btn-round btn-xs">Not yet uploaded</button>
+                                    </span>
+                                    <span *ngIf="kycStatus.pass_stat == 1 ">
+                                        <button class="btn btn-warning btn-round btn-xs">sent for verification</button>
+                                    </span>    
+                                    <span *ngIf="kycStatus.pass_stat == 2 ">
+                                        <button class="btn btn-success btn-round btn-xs">Approved</button>
+                                    </span>                                      
+                                    <span *ngIf="kycStatus.pass_stat == 3 ">
+                                        <button class="btn btn-failure btn-round btn-xs">Document Invalid</button>
+                                    </span> 
+                                </div>
+                            </div>                            
+                            <div class="col-md-5">
+                                <div class="form-group label-floating">
+                                    <div class="radio">
+                                        <label>
+                                                <input type="radio" [value]="1" 
+                                                [checked]="kycStatus.pass_stat===1"
+                                                (change)="onPassportStatusChange(1)"
+                                                name="pstatus" checked="true">
+                                                Verified
+                                            </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                                <input type="radio" [value]="3" 
+                                                [checked]="kycStatus.pass_stat===3"
+                                                (change)="onPassportStatusChange(3)"
+                                                name="pstatus">
+                                                Invalid
+                                            </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="form-group label-floating">
+                                    <p>Full KYC Status</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group label-floating">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" [value]="1" 
+                                            [checked]="kycStatus.status===1"
+                                            (change)="onStatusChange(1)"
+                                            name="status" checked="true">
+                                            Verified
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" [value]="3" 
+                                            [checked]="kycStatus.status===0"
+                                            (change)="onStatusChange(3)"
+                                            name="status">
+                                            Invalid
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary pull-right" *ngIf="ownerView!=1" (click)="update()">
+                            <i class="material-icons">save</i> KYC Status
+                    </button> 
+                </div>
+                <!-- end content-->
+            </div>
+            <!--  end card  -->
+        </div>
+        <!-- end col-md-12 -->
+    </div>
+    <!-- end row -->
+</div>

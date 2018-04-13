@@ -1,0 +1,73 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">           
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-icon" data-background-color="rose">
+                        <i class="material-icons">perm_identity</i>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Schedule
+                            <small class="category">visit to the property</small>
+                        </h4>
+                        <form (ngSubmit)="changeStatus(f); f.reset()" #f="ngForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating">
+                                        <h2>{{booking.title}}</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Tenant Phone</label>
+                                        <input type="text" id="phone" name="phone"
+                                        [ngModel]="booking.phone"
+                                         ngModel class="form-control">                                        
+                                    </div>
+                                </div>
+                            </div>   
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating">
+                                        <md-form-field>
+                                            <input mdInput name="Appointment Date" id="aptDate" name="aptDate" [(ngModel)]="booking.aptDate" [mdDatepicker]="picker1" 
+                                            placeholder="Visit date">
+                                            <md-datepicker-toggle mdSuffix [for]="picker1"></md-datepicker-toggle>
+                                            <md-datepicker #picker1></md-datepicker>
+                                        </md-form-field>
+                                    </div>
+                                </div>
+                            </div>    
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label class="control-label">Visit Time</label>
+                                    <div class="form-group label-floating">
+                                        <label class="control-label"></label>
+                                        <input type="time" id="aptTime" name="aptTime"
+                                        placeholder="HH:MM"
+                                        [ngModel]="booking.aptTime"
+                                            ngModel class="form-control">                                         
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="row"> 
+                                <div class="col-md-12">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Details</label>
+                                        <textarea class="form-control" rows="5" id="details"
+                                        name="details" [(ngModel)]="booking.details" #details="ngModel"></textarea>
+                                    </div>
+                                </div>  
+                            </div>                                                                                                                                                                                                                                          
+                            <button type="submit" class="btn btn-rose pull-right">Book Schedule</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,65 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-icon" data-background-color="rose">
+                        <i class="material-icons">account_balance</i>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Bank account -
+                            <small class="category">Provide your bank account details</small>
+                        </h4>
+                        <form (ngSubmit)="update(f);" #f="ngForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Bank Name</label>
+                                        <input type="text" class="form-control" id="bname" name="bname" [(ngModel)]="property.bname" #bname="ngModel">
+                                        <!-- <small [hidden]="fname.valid || (fname.pristine && !f.submitted)" class="text-danger">
+                                                First Name is required
+                                        </small> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Account Holder Name</label>
+                                        <input type="text" class="form-control" id="ahname" name="ahname" [(ngModel)]="property.ahname">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Account Number</label>
+                                        <input type="text" class="form-control" id="anumber" name="anumber" [(ngModel)]="property.anumber">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">IFSC Code</label>
+                                        <input type="text" class="form-control" id="icode" name="icode" [(ngModel)]="property.icode">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Account Type</label>
+                                        <input type="text" class="form-control" id="atype" name="atype" [(ngModel)]="property.atype">
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-rose pull-right">Update</button>
+                            <div class="clearfix"></div>                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

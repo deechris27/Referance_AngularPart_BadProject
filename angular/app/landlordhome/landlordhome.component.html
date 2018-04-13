@@ -1,0 +1,221 @@
+<div layout="column" class="Landing-cover-lh" layout-align="center center">
+    <div class="col-md-12 centered margin-top-80" style="text-align:center;">
+        <h1 class="Landing-heading divopaque">
+            <strong>Manage your Properties from across the Globe</strong>
+        </h1>
+        <h3 class="Landing-heading divopaque">
+            <strong>Why worry during every Month end?</strong>
+        </h3>
+        <h3 class="Landing-heading divopaque">
+            <strong>Leave the Rental Collections, Tenant Agreements & Property Management to us.</strong>
+        </h3>
+    </div>
+</div>
+
+<div id="howitworks"></div>
+<!-- Content
+    ================================================== -->
+<section class="fullwidth margin-top-65 padding-top-75 padding-bottom-70" data-background-color="#f8f8f8">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12">
+                <h3 class="headline centered margin-bottom-45">
+                    What we Offer
+                    <span>Rented property management
+                        <i>services for free </i>from anywhere anytime</span>
+                </h3>
+            </div>
+
+            <div class="col-md-12">
+                <!-- You can now use your library component in app.component.html -->
+                <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig">
+                    <div ngxSlickItem *ngFor="let item of items" class="carousel-item">
+                        <div class="listing-item">
+                            <a [routerLink]="['/propdetail', item.id]">
+                                <img src={{item.imgSrc}} alt="" width="100%">
+                            </a>
+                            <div class="listing-item-content">
+                                <h3>{{item.text}}</h3>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </ngx-slick>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Info Section / End -->
+
+
+<div class="container margin-bottom-60">
+
+    <div class="row centered">
+        <div class="col-md-12" style="margin:0px auto;text-align:center;">
+            <h3 class="headline centered margin-top-80 margin-bottom-40">
+                <i class="im im-icon-Building"></i> Features
+                <span style="border-bottom: 1px solid #f91942;width: 64px; margin: 0px auto;padding: 4px;"></span>
+            </h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="style-2">
+                <!-- Tabs Navigation -->
+                <ul class="tabs-nav">
+                    <li class="active">
+                        <a href="#tab1a">
+                            <i class="im im-icon-Add-UserStar"></i>Register</a>
+                    </li>
+                    <li>
+                        <a href="#tab2a">
+                            <i class="im im-icon-Bulleted-List"></i>List Your Properties</a>
+                    </li>
+                    <li>
+                        <a href="#tab3a">
+                            <i class="im im-icon-Monitor-Analytics"></i>Get Scheduled tenents Visits</a>
+                    </li>
+                    <li>
+                        <a href="#tab4a">
+                            <i class="im im-icon-Handshake"></i>Get Booked Your Properties</a>
+                    </li>
+                    <li>
+                        <a href="#tab5a">
+                            <i class="im im-icon-Cloud-Tablet"></i>Track Rents History</a>
+                    </li>
+
+                </ul>
+                <!-- Tabs Content -->
+                <div class="tabs-container">
+                    <div class="tab-content" id="tab1a">
+                        Register as owner it will take one minute for lifetime. It will be interesting to manage your rented properties online.
+                    </div>
+
+                    <div class="tab-content" id="tab2a">Aenean dolor mi, luctus et laoreet hendrerit, condimentum faucibus mi. Nam et sem eros. Sed sed eros
+                        nec massa pellentesque accumsan in nec magna. Donec sollicitudin enim nec justo mollis bibendum.
+                        Nulla eleifend mollis velit. Ut sed risus eget metus egestas sagittis. Etiam vestibulum interdum
+                        turpis.
+                    </div>
+
+                    <div class="tab-content" id="tab3a">Suspendisse ut laoreet massa. Etiam vel dolor eu quam varius tempor eu eu mi. Duis auctor interdum ligula
+                        ut faucibus. Vivamus lorem ipsum dolor sit amet in tincidunt augue. Aenean at ligula justo, sed gravida
+                        metus. </div>
+
+                    <div class="tab-content" id="tab4a">Suspendisse ut laoreet massa. Etiam vel dolor eu quam varius tempor eu eu mi. Duis auctor interdum ligula
+                        ut faucibus. Vivamus lorem ipsum dolor sit amet in tincidunt augue. Aenean at ligula justo, sed gravida
+                        metus. </div>
+
+                    <div class="tab-content" id="tab5a">Suspendisse ut laoreet massa. Etiam vel dolor eu quam varius tempor eu eu mi. Duis auctor interdum ligula
+                        ut faucibus. Vivamus lorem ipsum dolor sit amet in tincidunt augue. Aenean at ligula justo, sed gravida
+                        metus. </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Container / Start -->
+<div class="container margin-top-65 padding-top-75 padding-bottom-70">
+    <!-- Row / Start -->
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="headline centered margin-bottom-45">
+                Pricing Schemes
+                <span>Outsource
+                    <i>your Headaches </i>by signing up with Us</span>
+            </h3>
+        </div>
+
+        <div class="col-md-12">
+            <div class="pricing-container margin-top-30">
+                <!-- Plan #1 -->
+                <div class="plan">
+                    <div class="plan-price">
+                        <h3>Basic</h3>
+                        <span class="value">Free</span>
+                        <span class="period">Free of charge one standard listing active for 90 days</span>
+                    </div>
+
+                    <div class="plan-features">
+                        <ul>
+                            <li>One Listing</li>
+                            <li>90 Days Availability</li>
+                            <li>Non-Featured</li>
+                            <li>24/7 Support</li>
+                        </ul>
+                        * Free Trial for 30 Days
+                        <a class="btn btn-rose btn-round" href="#">Get Started</a>
+                    </div>
+                </div>
+                <!-- Plan #2 -->
+
+                <div class="plan">
+                    <div class="plan-price">
+                        <h3>Value Add</h3>
+                        <span class="value">Rs 499/month</span>
+                        <span class="period">All Basic Features included plus the following benefits</span>
+                    </div>
+                    <div class="plan-features">
+                        <ul>
+                            <li>One Listing</li>
+                            <li>180 Days Availability</li>
+                            <li>Non-Featured</li>
+                            <li>24/7 Support</li>
+                        </ul>
+                        * Free Trial for 30 Days
+                        <a class="btn btn-rose btn-round" href="#">Get Started</a>
+                    </div>
+                </div>
+                <!-- Plan #3 -->
+                <div class="plan featured">
+                    <div class="listing-badge">
+                        <span class="featured">Recommended</span>
+                    </div>
+
+                    <div class="plan-price">
+                        <h3>Extended</h3>
+                        <span class="value">Rs 999/month</span>
+                        <span class="period">All Basic + Value Add Features included plus the following benefits</span>
+                    </div>
+                    <div class="plan-features">
+                        <ul>
+                            <li>One Time Fee</li>
+                            <li>One Listing</li>
+                            <li>Lifetime Availability</li>
+                            <li>Featured In Search Results</li>
+                            <li>24/7 Support</li>
+                        </ul>
+                        * Free Trial for 30 Days
+                        <a class="btn btn-rose btn-round" href="#">Get Started</a>
+
+                    </div>
+                </div>
+
+                <!-- Plan #4 -->
+                <div class="plan">
+                    <div class="plan-price">
+                        <h3>Professional</h3>
+                        <span class="value">Rs 1499/month</span>
+                        <span class="period">All Extended Features included plus the following </span>
+                    </div>
+
+                    <div class="plan-features">
+                        <ul>
+                            <li>Unlimited Listings</li>
+                            <li>Lifetime Availability</li>
+                            <li>Featured In Search Results</li>
+                            <li>24/7 Support</li>
+                        </ul>
+                        * Free Trial for 30 Days
+                        <a class="btn btn-rose btn-round" href="#">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Row / End -->
+</div>
+<!-- Container / End -->

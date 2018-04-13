@@ -1,0 +1,92 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                    <div class="card card-profile">
+                        <div class="card-avatar">
+                            <a href="#pablo">
+                                <img class="img" #prfPreview src="http://studphotos.s3.amazonaws.com/img/400x400.jpg">
+                            </a>
+                        </div>
+                        <div class="card-content">
+                            <h4 class="card-title">{{ticket.name}}</h4>
+                        </div>
+                    </div>
+                </div>            
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-icon" data-background-color="rose">
+                        <i class="material-icons">perm_identity</i>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Ticket -
+                            <small class="category">status</small>
+                        </h4>
+                        <form (ngSubmit)="changeStatus(f);" #f="ngForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Propery</label>
+                                        <p>{{ticket.title}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Tenant contact</label>
+                                        <p>{{ticket.phone}}</p>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Tenant email</label>
+                                        <p>{{ticket.email}}</p>
+                                    </div>
+                                </div>
+                            </div>    
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Ticket date</label>
+                                        <p>{{ticket.date}}</p>
+                                    </div>
+                                </div>
+                            </div>                                                                                                                  
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating">
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" [value]="0" 
+                                                [checked]="ticket.status===0"
+                                                (change)="onStatusChange(0)"
+                                                name="status">
+                                                Unread
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" [value]="1" 
+                                                [checked]="ticket.status===1"
+                                                (change)="onStatusChange(1)"
+                                                name="status" checked="true">
+                                                Solved
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                            <button type="submit" class="btn btn-rose pull-right">Update Ticket</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

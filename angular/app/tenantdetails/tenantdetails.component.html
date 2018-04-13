@@ -1,0 +1,110 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                    <div class="card card-profile">
+                        <div class="card-avatar">
+                            <a href="#pablo">
+                                <img class="img" #prfPreview src="http://studphotos.s3.amazonaws.com/img/400x400.jpg">
+                            </a>
+                        </div>
+                        <div class="card-content">
+                            <h4 class="card-title">{{visit.name}}</h4>
+                        </div>
+                    </div>
+                </div>            
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-icon" data-background-color="rose">
+                        <i class="material-icons">perm_identity</i>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Visitor -
+                            <small class="category">status</small>
+                        </h4>
+                        <form (ngSubmit)="changeStatus(f);" #f="ngForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Propery</label>
+                                        <p>{{visit.title}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Tenant contact</label>
+                                        <p>{{visit.phone}}</p>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Tenant email</label>
+                                        <p>{{visit.email}}</p>
+                                    </div>
+                                </div>
+                            </div>    
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Visit date</label>
+                                        <p>{{visit.date}}</p>
+                                    </div>
+                                </div>
+                            </div>                                                                                                                  
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating">
+                                        <div class="radio">
+                                                <label>
+                                                    <input type="radio" [value]="0" 
+                                                    [checked]="visit.status===0"
+                                                    (change)="onStatusChange(1)"
+                                                    name="status">
+                                                    Not Visited Yet
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" [value]="1" 
+                                                    [checked]="visit.status===1"
+                                                    (change)="onStatusChange(1)"
+                                                    name="status" checked="true">
+                                                    Visited
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" [value]="2" 
+                                                    [checked]="visit.status===3"
+                                                    (change)="onStatusChange(2)"
+                                                    name="status">
+                                                    Booked
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" [value]="3" 
+                                                    [checked]="visit.status===4"
+                                                    (change)="onStatusChange(3)"
+                                                    name="status">
+                                                    Cancelled
+                                                </label>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                            <button type="submit" class="btn btn-rose pull-right">Update Status</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

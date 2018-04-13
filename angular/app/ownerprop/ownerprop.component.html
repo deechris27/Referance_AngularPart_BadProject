@@ -1,0 +1,141 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row" *ngFor="let p of property; let i = index" [ngSwitch]="i % 3">
+            <div class="col-lg-4 col-md-6" *ngSwitchCase="0">
+                <div class="card card-product">
+                    <div class="card-image" data-header-animation="true">
+                        <img class="img thumbnail"
+                            src="http://studphotos.s3.amazonaws.com/{{property[i].owner_id}}_{{property[i].id}}.jpg">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-actions">
+                            <button type="button" class="btn btn-danger btn-simple fix-broken-card">
+                                <i class="material-icons">build</i> Fix Header!
+                            </button>
+                            <!-- <button type="button" class="btn btn-default btn-simple" rel="tooltip" data-placement="bottom" title="View">
+                                <i class="material-icons">art_track</i>
+                            </button> -->
+                            <button type="button" class="btn btn-success btn-simple" rel="tooltip" 
+                              data-placement="bottom" title="Edit" 
+                              [routerLink]="['/property', property[i]]">
+                                <i class="material-icons">edit</i>
+                            </button>
+                            <button type="button" class="btn btn-danger btn-simple" 
+                                rel="tooltip" data-placement="bottom" title="Remove"
+                                (click)="onDelete(property[i].id)">
+                                <i class="material-icons">close</i>
+                            </button>
+                        </div>
+                        <h4 class="card-title">
+                            <a href="#pablo" [textContent]="property[i].title"></a>
+                        </h4>
+                        <div class="card-description" [textContent]="property[i].details"></div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="price" *ngIf="property[i].status!==0">
+                            <h4 [textContent]="property[i].rent"></h4>
+                        </div>
+                        <div class="stats" *ngIf="property[i].status==0">
+                            <i class="material-icons text-danger">warning</i>Pending Verification
+                        </div>
+                        <div class="stats pull-right">
+                            <p class="category" [textContent]="property[i].address"><i class="material-icons">place</i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" *ngSwitchCase="0">
+                <span *ngIf="property?.length > i+1">
+                <div class="card card-product">
+                    <div class="card-image" data-header-animation="true">
+                        <img class="img thumbnail"
+                        src="http://studphotos.s3.amazonaws.com/{{property[i+1].owner_id}}_{{property[i+1].id}}.jpg">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-actions">
+                            <button type="button" class="btn btn-danger btn-simple fix-broken-card">
+                                <i class="material-icons">build</i> Fix Header!
+                            </button>
+                            <!-- <button type="button" class="btn btn-default btn-simple" 
+                               rel="tooltip" data-placement="bottom" title="View">
+                                <i class="material-icons">art_track</i>
+                            </button> -->
+                            <button type="button" class="btn btn-success btn-simple" rel="tooltip" 
+                                data-placement="bottom" title="Edit"
+                                [routerLink]="['/property', property[i+1]]">
+                                <i class="material-icons">edit</i>
+                            </button>
+                            <button type="button" class="btn btn-danger btn-simple" 
+                              rel="tooltip" data-placement="bottom" title="Remove"
+                              (click)="onDelete(property[i+1].id)">
+                                <i class="material-icons">close</i>
+                            </button>
+                        </div>
+                        <h4 class="card-title">
+                            <a href="#pablo"[textContent]="property[i+1].title"></a>
+                        </h4>
+                        <div class="card-description" [textContent]="property[i+1].details"></div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="price" *ngIf="property[i+1].status!==0">
+                            <h4 [textContent]="property[i+1].rent"></h4>
+                        </div>
+                        <div class="stats" *ngIf="property[i+1].status==0">
+                            <i class="material-icons text-danger">warning</i>Pending Verification
+                        </div>                        
+                        <div class="stats pull-right">
+                            <p class="category" [textContent]="property[i+1].address"><i class="material-icons">place</i></p>
+                        </div>
+                    </div>
+                </div>
+            </span>
+            </div>
+            <div class="col-lg-4 col-md-6" *ngSwitchCase="0">
+                <span *ngIf="property?.length > i+2">
+                    <div class="card card-product">
+                        <div class="card-image" data-header-animation="true">
+                            <img class="img thumbnail"
+                            src="http://studphotos.s3.amazonaws.com/{{property[i+2].owner_id}}_{{property[i+2].id}}.jpg">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-actions">
+                                <button type="button" class="btn btn-danger btn-simple fix-broken-card">
+                                    <i class="material-icons">build</i> Fix Header!
+                                </button>
+                                <!-- <button type="button" class="btn btn-default btn-simple" rel="tooltip" 
+                                        data-placement="bottom" title="View">
+                                    <i class="material-icons">art_track</i>
+                                </button> -->
+                                <button type="button" class="btn btn-success btn-simple" rel="tooltip" 
+                                        data-placement="bottom" title="Edit" 
+                                        [routerLink]="['/property', property[i+2]]">
+                                    <i class="material-icons">edit</i>
+                                </button>
+                                <button type="button" class="btn btn-danger btn-simple" 
+                                   rel="tooltip" data-placement="bottom" title="Remove"
+                                   (click)="onDelete(property[i+2].id)">
+                                    <i class="material-icons">close</i>
+                                </button>
+                            </div>
+                            <h4 class="card-title">
+                                <a href="#pablo"[textContent]="property[i+2].title"></a>
+                            </h4>
+                            <div class="card-description" [textContent]="property[i+2].details"></div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="price" *ngIf="property[i+2].status!==0">
+                                <h4 [textContent]="property[i+2].rent"></h4>
+                            </div>
+                            <div class="stats" *ngIf="property[i+2].status==0">
+                                <i class="material-icons text-danger">warning</i>Pending Verification
+                            </div>                            
+                            <div class="stats pull-right">
+                                <p class="category" [textContent]="property[i+2].address"><i class="material-icons">place</i></p>
+                            </div>
+                        </div>
+                    </div>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,596 @@
+<div class="main-content container-bk">
+    <div class="container-fluid">
+        <div class="col-sm-8 col-sm-offset-2">
+            <!--      Wizard container        -->
+            <div class="wizard-container">
+                <div class="card wizard-card" data-color="rose" id="wizardProfile">
+                    <form (ngSubmit)="upload(f); f.reset()" #f="ngForm">
+                        <!--        You can switch " data-color="purple" "  with one of the next bright colors: "green", "orange", "red", "blue"       -->
+                        <div class="wizard-header">
+                            <h3 class="wizard-title">
+                                Property
+                            </h3>
+                            <h5>Help us to know your Property Better</h5>
+                        </div>
+                        <div class="wizard-navigation">
+                            <ul>
+                                <li>
+                                    <a href="#about" data-toggle="tab">Property</a>
+                                </li>
+                                <li>
+                                    <a href="#tenant" data-toggle="tab">Tenant</a>
+                                </li>
+                                <li>
+                                    <a href="#address2" data-toggle="tab">Pricing</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-pane" id="about">
+                                <h4 class="info-text"> Details about your property </h4>
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-offset-10">
+                                        <div class="togglebutton">
+                                            <label>
+                                                <input type="checkbox" checked name="active" data-toggle="toggle">Active
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Title</label>
+                                            <input type="text" class="form-control" id="title" name="title" [ngModel]="property.title" required minlength="4" #title="ngModel">
+                                            <small [hidden]="title.valid || (title.pristine && !f.submitted)" class="text-danger">
+                                                Title should be more than 4 characters.
+                                            </small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Address</label>
+                                            <input type="text" id="address" name="address" [ngModel]="property.address" ngModel class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">City</label>
+                                            <input type="text" id="city" name="city" [ngModel]="property.city" ngModel class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">State</label>
+                                            <input type="text" id="state" name="state" [ngModel]="property.state" ngModel class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Country</label>
+                                            <input type="text" id="country" name="country" [ngModel]="property.country" ngModel class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Zip</label>
+                                            <input type="text" id="zip" name="zip" [ngModel]="property.zipcode" ngModel class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Landmark</label>
+                                            <input type="text" id="landmark" name="landmark" [ngModel]="property.landmark" ngModel class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Latitude</label>
+                                            <input type="text" id="latitude" name="latitude" [ngModel]="property.latitude" ngModel class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Longtitude</label>
+                                            <input type="text" id="longtitude" name="longtitude" [ngModel]="property.longitude" ngModel class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" [value]="0" [checked]="property.type===0" (change)="onTypeChange(0)" name="type"> Individual House
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" [value]="1" [checked]="property.type===1" (change)="onTypeChange(1)" name="type" checked="true"> Apartment
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Rooms</label>
+                                            <input type="text" id="rooms" name="rooms" [ngModel]="property.rooms" ngModel class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Area</label>
+                                            <input type="text" id="area" name="area" [ngModel]="property.area" ngModel class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Garden Area</label>
+                                            <input type="text" id="garden_area" name="garden_area" [ngModel]="property.garden_area" ngModel class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Nearby Schools</label>
+                                            <input type="text" id="schools" name="schools" [ngModel]="property.nearby_school" ngModel class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Nearby Busstop</label>
+                                            <input type="text" id="busstop" name="busstop" [ngModel]="property.nearby_busstop" ngModel class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Nearby Railway Station</label>
+                                            <input type="text" id="station" name="station" [ngModel]="property.nearby_railway" ngModel class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>About Property</label>
+                                            <div class="form-group label-floating">
+                                                <label class="control-label"></label>
+                                                <textarea class="form-control" id="about" name="about" [(ngModel)]="property.details" rows="5" ngDefaultControl></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <h4 class="info-text"> What Amenities you have? </h4>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-11">
+                                        <div class="col-sm-2">
+                                            <div class="choice" data-toggle="wizard-checkbox" id="wifi">
+                                                <input type="checkbox" name="amenities" value="wifi" id="wifi">
+                                                <div class="icon">
+                                                    <i class="fa fa-wifi"></i>
+                                                </div>
+                                                <h6>WIFI</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="choice" data-toggle="wizard-checkbox" id="furnished">
+                                                <input type="checkbox" name="amenities" value="furnished" id="furnished">
+                                                <div class="icon">
+                                                    <i class="material-icons">event_seat</i>
+                                                </div>
+                                                <h6>furnished</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="choice" data-toggle="wizard-checkbox" id="ac">
+                                                <input type="checkbox" name="amenities" value="ac" id="ac">
+                                                <div class="icon">
+                                                    <i class="fa fa-window-maximize"></i>
+                                                </div>
+                                                <h6>AC</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="choice" data-toggle="wizard-checkbox" id="tv">
+                                                <input type="checkbox" name="amenities" value="tv" id="tv">
+                                                <div class="icon">
+                                                    <i class="fa fa-television"></i>
+                                                </div>
+                                                <h6>TV</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="choice" data-toggle="wizard-checkbox" id="heater">
+                                                <input type="checkbox" name="heater" value="heater" id="heater">
+                                                <div class="icon">
+                                                    <i class="fa fa-sun-o"></i>
+                                                </div>
+                                                <h6>Heater</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="choice" data-toggle="wizard-checkbox" id="security">
+                                                <input type="checkbox" name="security" value="security" id="security">
+                                                <div class="icon">
+                                                    <i class="fa fa-user-secret"></i>
+                                                </div>
+                                                <h6>Security</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="choice" data-toggle="wizard-checkbox" id="rain">
+                                                <input type="checkbox" name="rain" value="rain" id="rain">
+                                                <div class="icon">
+                                                    <i class="fa fa-tint"></i>
+                                                </div>
+                                                <h6>Rainwater Harvesting</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="choice" data-toggle="wizard-checkbox" id="water">
+                                                <input type="checkbox" name="water" value="water" id="water">
+                                                <div class="icon">
+                                                    <i class="fa fa-shower"></i>
+                                                </div>
+                                                <h6>Metro Water</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="choice" data-toggle="wizard-checkbox" id="cable">
+                                                <input type="checkbox" name="cable" value="cable" id="cable">
+                                                <div class="icon">
+                                                    <i class="material-icons">timeline</i>
+                                                </div>
+                                                <h6>Cable Connection</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="choice" data-toggle="wizard-checkbox" id="phase">
+                                                <input type="checkbox" name="phase" value="phase" id="phase">
+                                                <div class="icon">
+                                                    <i class="material-icons">settings_input_component</i>
+                                                </div>
+                                                <h6>3 Phase</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="choice" data-toggle="wizard-checkbox" id="power">
+                                                <input type="checkbox" name="power" value="power" id="power">
+                                                <div class="icon">
+                                                    <i class="material-icons">power</i>
+                                                </div>
+                                                <h6>Inverter</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <div class="choice" data-toggle="wizard-checkbox" id="parking">
+                                                <input type="checkbox" name="parking" value="parking" id="parking">
+                                                <div class="icon">
+                                                    <i class="material-icons">local_parking</i>
+                                                </div>
+                                                <h6>Parking lot</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="choice" data-toggle="wizard-checkbox" id="elevator">
+                                                <input type="checkbox" name="elevator" value="elevator" id="elevator">
+                                                <div class="icon">
+                                                    <i class="material-icons">open_in_browser</i>
+                                                </div>
+                                                <h6>Elevator</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="choice" data-toggle="wizard-checkbox" id="gym">
+                                                <input type="checkbox" name="gym" value="gym" id="gym">
+                                                <div class="icon">
+                                                    <i class="material-icons">directions_run</i>
+                                                </div>
+                                                <h6>Gym</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <h4 class="info-text"> Do you have shared amenities? </h4>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-11">
+                                        <div class="col-sm-2">
+                                            <div class="choice" data-toggle="wizard-checkbox" id="shared_parking">
+                                                <input type="checkbox" name="shared_parking" value="shared_parking" id="shared_parking">
+                                                <div class="icon">
+                                                    <i class="material-icons">local_parking</i>
+                                                </div>
+                                                <h6>Shared Parking</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="choice" data-toggle="wizard-checkbox" id="shared_elevator">
+                                                <input type="checkbox" name="shared_elevator" value="shared_elevator" id="shared_elevator">
+                                                <div class="icon">
+                                                    <i class="material-icons">open_in_browser</i>
+                                                </div>
+                                                <h6>Shared Elevator</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="choice" data-toggle="wizard-checkbox" id="shared_yard">
+                                                <input type="checkbox" name="shared_yard" value="shared_yard" id="shared_yard">
+                                                <div class="icon">
+                                                    <i class="fa fa-tree" aria-hidden="true"></i>
+                                                </div>
+                                                <h6>Shared backyard</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="choice" data-toggle="wizard-checkbox" id="shared_balcony">
+                                                <input type="checkbox" name="shared_balcony" value="shared_balcony" id="shared_balcony">
+                                                <div class="icon">
+                                                    <i class="material-icons">streetview</i>
+                                                </div>
+                                                <h6>Shared balcony</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="choice" data-toggle="wizard-checkbox" id="shared_terrace">
+                                                <input type="checkbox" name="shared_terrace" value="shared_terrace" id="shared_terrace">
+                                                <div class="icon">
+                                                    <i class="material-icons">vertical_align_top</i>
+                                                </div>
+                                                <h6>Shared terrace</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="choice" data-toggle="wizard-checkbox" id="shared_gym">
+                                                <input type="checkbox" name="shared_gym" value="shared_gym" id="shared_gym">
+                                                <div class="icon">
+                                                    <i class="material-icons">directions_run</i>
+                                                </div>
+                                                <h6>Shared Gym</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="row">
+                                        <h4 class="info-text"> Property Image </h4>
+                                    </div>
+                                    <div class="col-lg-10 col-lg-offset-4">
+                                        <div class="col-sm-6">
+                                            <div class="card card-product">
+                                                <div class="card-image" data-header-animation="false">
+                                                    <a href="#pablo">
+                                                        <img class="img" #imgPreview src="//studphotos.s3.amazonaws.com/img/800x500.jpg">
+                                                    </a>
+                                                </div>
+                                                <div class="card-content">
+                                                    <input #fileinput class="ng-hide" id="file-input" input-files="files" type="file" accept="image/*" (change)="readUrl($event)"
+                                                    />
+                                                    <label for="file-input" class="btn btn-primary pull-right" #uploadButton id="uploadButton">Upload Photo</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="tab-pane" id="tenant">
+                                <div class="row">
+                                    <h4 class="info-text"> Documents you need from Tenant </h4>
+                                </div>
+                                <div class="col-lg-12 col-lg-offset-1">
+                                    <div class="row">
+                                        <div class="col-sm-2">
+                                            <div class="choice" data-toggle="wizard-checkbox" id="kyc_check">
+                                                <input type="checkbox" name="checklist" value="kyc" id="kyc_check">
+                                                <div class="icon">
+                                                    <i class="material-icons">security</i>
+                                                </div>
+                                                <h6>KYC</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="choice" data-toggle="wizard-checkbox" id="profile_picture_needed">
+                                                <input type="checkbox" name="checklist" value="picture" id="profile_picture_needed">
+                                                <div class="icon">
+                                                    <i class="material-icons">add_a_photo</i>
+                                                </div>
+                                                <h6>Profile Picture</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="choice" data-toggle="wizard-checkbox" id="bank_details_needed">
+                                                <input type="checkbox" name="checklist" value="bank" id="bank_details_needed">
+                                                <div class="icon">
+                                                    <i class="material-icons">account_balance</i>
+                                                </div>
+                                                <h6>Bank details</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <h4 class="info-text"> Do you allow? (click once if you allow) </h4>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-2">
+                                            <div class="choice" data-toggle="wizard-checkbox" id="smoking">
+                                                <input type="checkbox" name="checklist" value="smoking" id="smoking">
+                                                <div class="icon">
+                                                    <i class="material-icons">smoking_rooms</i>
+                                                </div>
+                                                <h6>Smoking</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="choice" data-toggle="wizard-checkbox" id="allow_pets">
+                                                <input type="checkbox" name="checklist" value="pets" id="allow_pets">
+                                                <div class="icon">
+                                                    <i class="material-icons">pets</i>
+                                                </div>
+                                                <h6>Pets</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="choice" data-toggle="wizard-checkbox" id="allow_parties">
+                                                <input type="checkbox" name="checklist" value="parties" id="allow_parties">
+                                                <div class="icon">
+                                                    <i class="fa fa-glass" aria-hidden="true"></i>
+                                                </div>
+                                                <h6>Parties</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Any other rules</label>
+                                                <input type="text" id="additonal_rules" name="additional_rules" [ngModel]="property.additional_rules" ngModel class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="address2">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <h4 class="info-text"> How about the pricing & move in details? </h4>
+                                    </div>
+                                    <div class="col-sm-7 col-sm-offset-1">
+                                        <div class="form-group label-floating">
+                                            <md-form-field>
+                                                <input mdInput id="aptDate" name="aptDate" [(ngModel)]="aptDate" [mdDatepicker]="picker1" placeholder="Move in date">
+                                                <md-datepicker-toggle mdSuffix [for]="picker1"></md-datepicker-toggle>
+                                                <md-datepicker id="picker1" #picker1></md-datepicker>
+                                            </md-form-field>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Rent</label>
+                                            <input type="text" id="rent" name="rent" [ngModel]="property.rent" #rnt="ngModel" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5 col-sm-offset-1">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Deposit</label>
+                                            <input type="text" id="deposit" name="deposit" [ngModel]="property.deposit" ngModel class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <h4 class="info-text"> How about property visit details? </h4>
+                                    </div>
+                                    <div class="col-sm-5 col-sm-offset-1">
+                                        <label class="control-label">Property visit days</label>
+                                        <div class="form-group label-floating">
+                                            <select id="visitdays" name="visitdays" [ngModel]="property.visit_days" class="form-control">
+                                                <option disabled="" selected=""></option>
+                                                <option value="1"> Weekdays </option>
+                                                <option value="2"> Weekends </option>
+                                                <option value="3"> Sunday </option>
+                                                <option value="4"> Monday </option>
+                                                <option value="5"> Tuesday </option>
+                                                <option value="6"> Wednesday </option>
+                                                <option value="7"> Thursday </option>
+                                                <option value="8"> Friday </option>
+                                                <option value="9"> Saturday </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5 col-sm-offset-1">
+                                        <label class="control-label">Property visit time</label>
+                                        <div class="form-group label-floating">
+                                            <select id="visittime" name="visittime" [ngModel]="property.visit_timings" ngModel class="form-control">
+                                                <option disabled="" selected=""></option>
+                                                <option value="1">6am to 6pm </option>
+                                                <option value="2">9am to 5pm </option>
+                                                <option value="3"> 10am to 5pm </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5 col-sm-offset-1">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Notice period (months)</label>
+                                            <input type="text" id="notice" name="notice" [ngModel]="property.notice_period" ngModel class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row" *ngIf="updProperty">
+                                    <div class="col-sm-7 col-sm-offset-1">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Property Status</label>
+                                            <span *ngIf="property.status == 'undefined' ">
+                                                <button class="btn btn-primary btn-round btn-xs">Not yet uploaded</button>
+                                            </span>
+                                            <span *ngIf="property.status == 0 ">
+                                                <button class="btn btn-warning btn-round btn-xs">Inactive</button>
+                                            </span>
+                                            <span *ngIf="property.status == 1 ">
+                                                <button class="btn btn-success btn-round btn-xs">Active</button>
+                                            </span>
+                                            <span *ngIf="property.status == 2 ">
+                                                <button class="btn btn-failure btn-round btn-xs">Booked</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5 col-sm-offset-1">
+                                        <div class="form-group label-floating">
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" [value]="0" [checked]="property.status===0" (change)="onStatusChange(0)" name="pstatus"> Inactive
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" [value]="1" [checked]="property.status===1" (change)="onStatusChange(1)" name="pstatus"> Active
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" [value]="2" [checked]="property.status===2" (change)="onStatusChange(2)" name="pstatus"> Booked
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="addFooter" class="wizard-footer">
+                            <div class="pull-right">
+                                <input type='button' class='btn btn-next btn-fill btn-rose btn-wd' name='next' value='Next' />
+                                <input type='submit' class='btn btn-finish btn-fill btn-rose btn-wd' name='finish' value='Finish' />
+                            </div>
+                            <div class="pull-left">
+                                <input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Previous' />
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </form>
+                    <div id="updFooter" class="wizard-footer">
+                        <div class="pull-right">
+                            <input type='button' class='btn btn-next btn-fill btn-rose btn-wd' name='next' value='Next' />
+                            <input type='button' (click)="updatePropStatus()" class='btn btn-finish btn-fill btn-rose btn-wd' name='finish' value='Update Status'
+                            />
+                        </div>
+                        <div class="pull-left">
+                            <input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Previous' />
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- wizard container -->
+        </div>
+    </div>

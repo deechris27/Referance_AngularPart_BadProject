@@ -1,0 +1,8 @@
+img.thumbnail {
+    width: 256px;
+    height: 160px;
+ }
+
+ .container-bk{
+    background-color: #eee !important;
+  }

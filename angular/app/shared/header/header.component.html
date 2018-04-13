@@ -1,0 +1,43 @@
+<!-- Header Container
+================================================== -->
+<header id="header-container">
+    <!-- Header -->
+    <div id="header">
+        <div class="container">
+            <!-- Left Side Content -->
+            <div class="left-side">
+                <!-- Logo -->
+                <div id="logo">
+                    <a href="/">
+                        <img src="http://studphotos.s3.amazonaws.com/images/logo.png" alt="">
+                    </a>
+                </div>
+                <div class="clearfix"></div>
+                <!-- Main Navigation / End -->
+            </div>
+            <!-- Left Side Content / End -->
+            <!-- Right Side Content / End -->
+            <div class="right-side">
+                <div class="header-widget">
+                    <!-- <a href="#/tenant" class="sign-in">Tenants</a> -->
+                    <!-- <a href="#/landlord" class="sign-in">Landlords</a> -->
+
+                    <a href="#/login" *ngIf="!showLogin" class="sign-in button border with-icon pull-right">
+                        Sign In<i class="sl sl-icon-login"></i>
+                    </a>
+                    <a href="#/dashboard" *ngIf="showLogin" class="sign-in popup-with-zoom-anim">
+                        Hi {{ currentUser }}
+                    </a>
+
+                    <a href="#/register" *ngIf="!showLogin" class="button border with-icon">Add Listing
+                        <i class="sl sl-icon-plus"></i>
+                    </a>
+                    <a href="#/property" *ngIf="showLogin" class="button border with-icon">Add Listing
+                        <i class="sl sl-icon-plus"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- Right Side Content / End -->
+        </div>
+    </div>
+</header>

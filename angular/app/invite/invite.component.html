@@ -1,0 +1,61 @@
+<div class="main-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header card-header-icon" data-background-color="rose">
+                            <i class="material-icons">sms</i>
+                        </div>
+                        <div class="card-content">
+                            <h4 class="card-title">Invite -
+                                <small class="category">Invite your owner/tenants to FLAROW</small>
+                            </h4>
+                            <form (ngSubmit)="upload(f)" #f="ngForm">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Mobile</label>
+                                            <input type="text" id="mobile" name="mobile" 
+                                            ngModel class="form-control" [(ngModel)]="mobileNo" 
+                                            #mobile="ngModel" pattern="[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]"
+                                            minlength="10" maxlength="10" required>
+                                            <small [hidden]="mobile.valid || (mobile.pristine && !f.submitted)" 
+                                            class="text-danger">
+                                                    Mobile number is invalid
+                                            </small>
+                                        </div>
+                                    </div>                                           
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Email address</label>
+                                            <input type="email" class="form-control" id="email" 
+                                            name="email" [ngModel]="emailId" #email="ngModel" 
+                                            pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$"
+                                            required>
+                                            <small [hidden]="email.valid || (email.pristine && !f.submitted)" 
+                                            class="text-danger">
+                                                   Email id is invalid
+                                            </small>
+                                        </div>
+                                    </div>                                           
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Name</label>
+                                            <input type="text" id="name" name="name" ngModel class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-rose pull-right">Invite</button>
+                                <div class="clearfix"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    

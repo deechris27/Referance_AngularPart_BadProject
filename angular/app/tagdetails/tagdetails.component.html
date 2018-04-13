@@ -1,0 +1,151 @@
+<div class="main-content container-bk">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-icon" data-background-color="purple">
+                        <i class="material-icons">assignment</i>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Tag request details</h4>
+                        <div class="toolbar">
+                            <!--        Here you can write extra buttons/actions for the toolbar              -->
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="form-group label-floating">
+                                    <label class="control-label">Requested by</label>
+                                    <p>{{tagging.createdBy}}</p>  
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-group label-floating">
+                                    <label class="control-label">Updated by</label>
+                                    <p>{{tagging.updatedBy}}</p>  
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group label-floating">
+                                    <label class="control-label">Request Status</label>
+                                    <span *ngIf="tagging.request_status == 1 ">
+                                        <button class="btn btn-primary btn-round btn-xs">Untagged</button>
+                                    </span>
+                                    <span *ngIf="tagging.request_status == 4 ">
+                                        <button class="btn btn-warning btn-round btn-xs">Approved</button>
+                                    </span> 
+                                    <span *ngIf="tagging.request_status == 5 ">
+                                        <button class="btn btn-warning btn-round btn-xs">Invitation sent</button>
+                                    </span>    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="form-group label-floating">
+                                    <label class="control-label">Owner Details</label> 
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    {{tagging.ownerName}}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    {{tagging.about}}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    {{tagging.ownerEmail}}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    {{tagging.ownerMobile}}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    {{tagging.ownerAddress}}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    {{tagging.ownerCity}} {{tagging.ownerState}} {{tagging.ownerZip}}
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-group label-floating">
+                                    <label class="control-label">Tenant Details</label> 
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    {{tagging.tenantName}}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    {{tagging.tenantMobile}}
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="form-group label-floating">
+                                    <label class="control-label">Property Details</label>
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    Property id {{tagging.property_id}}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    {{tagging.title}}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    {{tagging.propAddress}} {{tagging.propCity}} {{tagging.propState}} {{tagging.propZip}}
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-group label-floating">
+                                    <label class="control-label">Rent Details</label>
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    {{tagging.rent}}
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end content-->
+                </div>
+                <!--  end card  -->
+            </div>
+            <!-- end col-md-12 -->
+        </div>
+        <!-- end row -->                   
+    </div>
+</div>

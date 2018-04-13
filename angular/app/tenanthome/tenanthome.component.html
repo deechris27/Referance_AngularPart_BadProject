@@ -1,0 +1,119 @@
+<div layout="column" class="Landing-cover-th" layout-align="center center">
+    <div class="col-md-12 centered margin-top-20" style="text-align:center;">
+        <h1 class="Landing-heading divopaque">
+            <strong>Find no broker rented property</strong>
+        </h1>
+        <h3 class="Landing-heading divopaque">
+            <strong>Get trusted landlords associated with Flarow</strong>
+        </h3>
+        <h3 class="Landing-heading divopaque">
+            <strong>Flarow will maintian your payment history you just relax</strong>
+        </h3>
+    </div>
+</div>
+
+<div id="howitworks"></div>
+<!-- Content
+    ================================================== -->
+
+<section class="fullwidth margin-top-65 padding-top-75 padding-bottom-70" data-background-color="#f8f8f8">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12">
+                <h3 class="headline centered margin-bottom-45">
+                    What we Offer to you
+                    <span>A platform to find
+                        <i>no broker property</i> schedule and visit rented properties</span>
+
+                </h3>
+            </div>
+
+            <div class="col-md-12">
+                <!-- You can now use your library component in app.component.html -->
+                <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig">
+                    <div ngxSlickItem *ngFor="let item of items" class="carousel-item">
+                        <div class="listing-item">
+                            <a [routerLink]="['/propdetail', item.id]">
+                                <img src={{item.imgSrc}} alt="" width="100%">
+                            </a>
+                            <div class="listing-item-content">
+                                <h3>{{item.text}}</h3>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </ngx-slick>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container margin-bottom-60">
+    <div class="row centered">
+        <div class="col-md-12" style="margin:0px auto;text-align:center;">
+            <h3 class="headline centered margin-top-80 margin-bottom-40">
+                <i class="im im-icon-Building"></i> Features
+                <span style="border-bottom: 1px solid #f91942;width: 64px; margin: 0px auto;padding: 4px;"></span>
+            </h3>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="style-2">
+                <!-- Tabs Navigation -->
+                <ul class="tabs-nav">
+                    <li class="active">
+                        <a href="#tab1a">
+                            <i class="im im-icon-Add-UserStar"></i>Register</a>
+                    </li>
+                    <li>
+                        <a href="#tab2a">
+                            <i class="im im-icon-Bulleted-List"></i>Schedule Your visit</a>
+                    </li>
+                    <li>
+                        <a href="#tab3a">
+                            <i class="im im-icon-Monitor-Analytics"></i>Negotiate Rent</a>
+                    </li>
+                    <li>
+                        <a href="#tab4a">
+                            <i class="im im-icon-Handshake"></i>Get Booked Your Properties</a>
+                    </li>
+                    <li>
+                        <a href="#tab5a">
+                            <i class="im im-icon-Cloud-Tablet"></i>Track Rents History</a>
+                    </li>
+
+                </ul>
+                <!-- Tabs Content -->
+                <div class="tabs-container">
+                    <div class="tab-content" id="tab1a">
+                        Register as owner it will take one minute for lifetime. It will be interesting to manage your rented properties online.
+                    </div>
+
+                    <div class="tab-content" id="tab2a">Aenean dolor mi, luctus et laoreet hendrerit, condimentum faucibus mi. Nam et sem eros. Sed sed eros
+                        nec massa pellentesque accumsan in nec magna. Donec sollicitudin enim nec justo mollis bibendum.
+                        Nulla eleifend mollis velit. Ut sed risus eget metus egestas sagittis. Etiam vestibulum interdum
+                        turpis.</div>
+
+                    <div class="tab-content" id="tab3a">Suspendisse ut laoreet massa. Etiam vel dolor eu quam varius tempor eu eu mi. Duis auctor interdum ligula
+                        ut faucibus. Vivamus lorem ipsum dolor sit amet in tincidunt augue. Aenean at ligula justo, sed gravida
+                        metus. </div>
+
+                    <div class="tab-content" id="tab4a">Suspendisse ut laoreet massa. Etiam vel dolor eu quam varius tempor eu eu mi. Duis auctor interdum ligula
+                        ut faucibus. Vivamus lorem ipsum dolor sit amet in tincidunt augue. Aenean at ligula justo, sed gravida
+                        metus. </div>
+
+                    <div class="tab-content" id="tab5a">Suspendisse ut laoreet massa. Etiam vel dolor eu quam varius tempor eu eu mi. Duis auctor interdum ligula
+                        ut faucibus. Vivamus lorem ipsum dolor sit amet in tincidunt augue. Aenean at ligula justo, sed gravida
+                        metus. </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

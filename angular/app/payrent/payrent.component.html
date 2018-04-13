@@ -1,0 +1,51 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="col-lg-6">
+                    <div class="card card-pricing card-raised">
+                        <div class="card-header card-header-icon" data-background-color="purple">
+                            <i class="fa fa-money fa-2x" aria-hidden="true"></i>
+                        </div>
+                        <div class="card-content">
+                            <form action="https://secure.payu.in/_payment" name="payuform" method=POST #form>
+                                <input type="hidden" name="key" value="{{payment.key}}" />
+                                <input type="hidden" name="amount" value="{{payment.amount}}" />
+                                <input type="hidden" name="hash"  value="{{payment.hash}}"/>
+                                <input type="hidden" name="txnid" value="{{payment.txnid}}"/>
+                                <input type="hidden" name="firstname" value="{{payment.firstname}}"/>
+                                <input type="hidden" name="email" value="{{payment.email}}"/>
+                                <input type="hidden" name="phone" value="{{payment.phone}}"/>
+                                <input type="hidden" name="productinfo" value="{{payment.productinfo}}"/>
+                                <input type="hidden" name="surl" value="http://54.254.197.169/transresponse"/>
+                                <input type="hidden" name="furl" value="http://54.254.197.169/transresponse"/>
+                                <input type="hidden" name="service_provider" value="payu_paisa"/>
+                                <input type="hidden" name="udf1" value="{{userId}}"/>
+                                <h4 class="card-title">Pay your rent</h4>
+                                <div class="row">
+                                    <h6 class="category">To Owner: {{payment.ownerName}}</h6>
+                                </div>
+                                <div class="icon icon-rose">
+                                    <i class="material-icons">home</i>
+                                </div>
+                                <p class="card-description">
+                                    {{payment.address}}
+                                </p>
+                                <div class="row">
+                                    <h6>Rent amount</h6>
+                                    <h3 class="card-title">Rs.{{payment.amount}}</h3>
+                                </div>
+                            </form>
+                            <input type="submit" class="btn btn-rose btn-round" name="payrent" (click)="form.submit()" value="PayUmoney"/>
+                            <button type="button" class="btn btn-rose btn-round" rel="tooltip" 
+                              data-placement="bottom" title="Netbanking" 
+                              [routerLink]="['/deposit']">
+                                <strong>Netbanking</strong>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
